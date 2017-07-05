@@ -15,8 +15,10 @@
     //return view('welcome');
 });*/
 
-Route::get('/', 'CategoryController@index');
-
+Route::model('category', App\Category::class);
+Route::get('/', 'CategoryController@showAllCategories');
+Route::get('sell{category}', 'CategoryController@showSellForm');
+Route::post('addCategoryGood{category}', 'CategoryController@saveNewGoodAndShowCategory');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
