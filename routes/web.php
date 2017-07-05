@@ -18,7 +18,9 @@
 Route::model('category', App\Category::class);
 Route::get('/', 'CategoryController@showAllCategories');
 Route::get('sell{category}', 'CategoryController@showSellForm');
+Route::get('buy{category}', 'CategoryController@showBuyForm');
 Route::post('addCategoryGood{category}', 'CategoryController@saveNewGoodAndShowCategory');
+Route::post('addCategoryOrder{category}', 'CategoryController@saveNewOrderAndShowCategory');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

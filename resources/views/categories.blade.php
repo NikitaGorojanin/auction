@@ -22,11 +22,21 @@
 
     .categories{
         width: 100%;
-        border-spacing: 20px;
+        border-spacing: 15px;
     }
 
     .button{
         color: #2fff34;
+    }
+
+    .top-right{
+        width: 100%;
+        text-align: right;
+    }
+
+    .links{
+        color: #48a4ff;
+        margin-right: 20px;
     }
 
     a{text-decoration: none;}
@@ -34,6 +44,16 @@
 
 </head>
 <body>
+@if (Route::has('login'))
+    <div class="top-right">
+        @if (Auth::check())
+            <a href="{{ url('/home') }}"><span class="links">Home</span></a>
+        @else
+            <a href="{{ url('/login') }}"><span class="links">Login</span></a>
+            <a href="{{ url('/register') }}"><span class="links">Register</span></a>
+        @endif
+    </div>
+@endif
 <center><H1>Категории товаров</H1></center>
 <?php $rowCnt=ceil(count($categories)/3); $remain = count($categories) - 3*floor(count($categories)/3);
 $remainStartIndex = count($categories)-$remain;?>
