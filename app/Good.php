@@ -12,8 +12,13 @@ class Good extends Model
         return $this->belongsTo(Category::class);
     }
 
-    public function user_id()//saler_id
+    public function user()//saler_id
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function district()//saler_id
+    {
+        return $this->belongsTo(District::class);
     }
 }

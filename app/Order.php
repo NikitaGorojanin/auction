@@ -13,8 +13,13 @@ class Order extends Model
         return $this->belongsTo(Category::class);
     }
 
-    public function user_id()//buyer_id
+    public function user()//buyer_id
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function district()//saler_id
+    {
+        return $this->belongsTo(District::class);
     }
 }

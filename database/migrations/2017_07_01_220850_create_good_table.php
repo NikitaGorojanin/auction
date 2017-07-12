@@ -19,6 +19,8 @@ class CreateGoodTable extends Migration
             $table->string('image_path');
             $table->integer('category_id')->unsigned()->index();
             $table->integer('user_id')->unsigned()->index();
+            $table->integer('cars_id')->unsigned()->index();
+            $table->integer('district_id')->unsigned()->index();
             $table->double('price');
             $table->timestamps();
         });

@@ -35,9 +35,24 @@
 
         <div>Введите желаемую цену товара</div>
         <div>
-            <textarea name="price" class="form-control"></textarea>
+            <input type="text" name="price" pattern="\d+(\.\d{2})?" class="form-control">
         </div>
-
+        <div>Выберите транспортное средство</div>
+        <div>
+            <select name="car" class="form-control">
+                @foreach($cars as $car)
+                    <option value="{{$car->id}}">{{$car->name}}</option>
+                @endforeach
+            </select>
+        </div>
+        <div>Выберите район доставки</div>
+        <div>
+            <select name="district" class="form-control">
+                @foreach($districts as $district)
+                    <option value="{{$district->id}}">{{$district->name}}</option>
+                @endforeach
+            </select>
+        </div>
         <div>
             <button type="submit" name="sell" class="btn btn-primary">Выставить заказ</button>
         </div>

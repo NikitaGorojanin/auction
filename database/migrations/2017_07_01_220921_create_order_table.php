@@ -17,6 +17,8 @@ class CreateOrderTable extends Migration
             $table->increments('id');
             $table->integer('category_id')->unsigned()->index();
             $table->integer('user_id')->unsigned()->index();
+            $table->integer('cars_id')->unsigned()->index();
+            $table->integer('district_id')->unsigned()->index();
             $table->double('price');
             $table->timestamps();
 
