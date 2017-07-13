@@ -1,0 +1,16 @@
+POST /Auction/auction/public/addCategoryOrder1 HTTP/1.1
+Accept:                    text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+Accept-Encoding:           gzip, deflate, br
+Accept-Language:           ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4
+Cache-Control:             max-age=0
+Connection:                keep-alive
+Content-Length:            79
+Content-Type:              application/x-www-form-urlencoded
+Cookie:                    __distillery=4e8faad_8502caf0-95ea-4f6a-b066-3367c2a2bb02-de8195e85-b8a6161649dc-d958; XSRF-TOKEN=eyJpdiI6ImRtVzA5UW1vZE9Nb2kzUTVWUjA3OHc9PSIsInZhbHVlIjoidVR6RUVpdURzQ0ZsZTJYeVA5SVNWY1FqbTJ5Z0dqR255aVBIQ3V0bGM1bHZKMFNoTjVZZWdIODVHeXhBdGFLUnpNMVl4YWgyVGpMcDBYcXlQR0tSVFE9PSIsIm1hYyI6IjdlNjBhOTU5OTQwMWNjOWJhNjNjZThhMzZhYzJjZTQ5YzAxNDM1ZjM5OTQyNDFjNWRjNTM4ZmYxY2Q1ZDcxZTkifQ%3D%3D; laravel_session=eyJpdiI6ImhrZUt1OVVack9PQTdlSjE4dE9qM2c9PSIsInZhbHVlIjoiTHAxUHFVQlhQaWFHaGd5dVltXC9NYVo0blNtb1g0eHExd1Ywck5rUjBzbHEwT0hPXC9NUkJGNGpPa1hhdzJOUDNZZXJNUjh4RUxoRitabmxDSnh4dXN5Zz09IiwibWFjIjoiOGNlZTNkNTAwZjM5YjNjYTRmNTY4MWI0YWMzZGNkMDg5NzZhY2QwM2MwNDVhN2VjYWMwY2U4MDhjOGM1MTJhMiJ9
+Host:                      localhost
+Origin:                    http://localhost
+Referer:                   http://localhost/Auction/auction/public/buy1
+Upgrade-Insecure-Requests: 1
+User-Agent:                Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+
+price=69&car=1&district=1&sell=&_token=Tf6ldUPFsd6HhE9mwfOU9US63MiFRleKEIoYdXv7
