@@ -7,7 +7,7 @@
     <title>Аукцион</title>
 
     <style>
-        html, body {
+        html{
             background-color: rgba(34, 34, 34, 0.76);
             color: #48a4ff;
             font-family: 'Raleway', sans-serif;
@@ -33,10 +33,6 @@
 <img src='../resources/images/{{$category->image_path}}'>
 <form method="POST" action="addCategoryGood{{$category->id}}">
 
-        <div>Введите цену вашего товара</div>
-        <div>
-            <input type="text" name="price" pattern="\d+(\.\d{2})?" class="form-control">
-        </div>
         <div>Ваше транспортное средство</div>
         <div>
             <select name="car" class="form-control">
@@ -45,13 +41,14 @@
                 @endforeach
             </select>
         </div>
-        <div>Выберите район доставки</div>
+        <div>Выберите районы доставки</div>
         <div>
-            <select name="district" class="form-control">
-                @foreach($districts as $district)
-                    <option value="{{$district->id}}">{{$district->name}}</option>
-                @endforeach
-            </select>
+            @foreach($districts as $district)
+                    <div>
+                        <input type="checkbox" name="district{{$district->id}}" value="{{$district->id}}">{{$district->name}}
+                        <input type="text" name="price{{$district->id}}" pattern="\d+(\.\d{2})?">
+                    </div>
+            @endforeach
         </div>
         <div>
             <button type="submit" name="sell" class="btn btn-primary">Выставить товар</button>

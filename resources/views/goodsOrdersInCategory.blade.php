@@ -44,7 +44,7 @@
 
 </head>
 <body>
-<H1>{{$category->name}}</H1>
+<H3>Заказы и предложения на {{$category->name}} в {{$district->name}}ском районе. Машина: {{$car->name}}</H3>
 <div class="sellers">
     <H2><span class="sellers_title title">Продавцы</span></H2>
     @foreach($goodsWithUsers as $gwu)

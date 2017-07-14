@@ -21,4 +21,9 @@ class Good extends Model
     {
         return $this->belongsTo(District::class);
     }
+
+    public function car()
+    {
+        return $this->belongsTo(Car::class);
+    }
 }
