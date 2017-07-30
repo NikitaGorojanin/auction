@@ -14,9 +14,13 @@ use Illuminate\Support\Facades\DB;
 class CategoryController extends Controller
 {
     //
-    public function showAllCategories(){
+    public function showAllGoodTypes(){
+        return view('chooseGoodType');
+    }
+
+    public function showAllCategories(Car $car){
         $categories = Category::all();
-        return view('categories', compact('categories'));
+        return view('chooseCategory', compact('categories', 'car'));
     }
 
     public function showSellForm(Category $category){

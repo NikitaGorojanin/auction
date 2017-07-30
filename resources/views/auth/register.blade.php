@@ -11,7 +11,7 @@
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 control-label">ФИО</label>
+                            <label for="name" class="col-md-4 control-label">Name</label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
@@ -25,7 +25,7 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail</label>
+                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
@@ -39,7 +39,7 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Пароль</label>
+                            <label for="password" class="col-md-4 control-label">Password</label>
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control" name="password" required>
@@ -53,7 +53,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="password-confirm" class="col-md-4 control-label">Подтвердите пароль</label>
+                            <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
@@ -61,8 +61,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="nickname" class="col-md-4 control-label">Псевдоним
-                                (это имя будет отображаться на сайте)</label>
+                            <label for="nickname" class="col-md-4 control-label">NickName</label>
 
                             <div class="col-md-6">
                                 <input id="nickname" type="text" class="form-control" name="nickname" required>
@@ -70,7 +69,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="contacts" class="col-md-4 control-label">Контакты</label>
+                            <label for="contacts" class="col-md-4 control-label">Contacts</label>
 
                             <div class="col-md-6">
                                 <input id="contacts" type="text" class="form-control" name="contacts" required>
@@ -78,9 +77,20 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="role" class="col-md-4 control-label">Role</label>
+
+                            <div class="col-md-6">
+                                <select id="role" class="form-control" name="role">
+                                    <option value="saler">Продавец</option>
+                                    <option value="buyer">Покупатель</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
-                                    Зарегистрироваться
+                                    Register
                                 </button>
                             </div>
                         </div>
