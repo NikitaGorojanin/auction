@@ -24,8 +24,13 @@ class CreateAuctionTable extends Migration
             $table->string('district_name');
             $table->integer('user_id');
             $table->string('user_name');
+            $table->string('user_phone');
             $table->string('user_role');
             $table->double('price');
+            $table->double('latitude');
+            $table->double('longitude');
+            $table->integer('partner_lot_id');
+            $table->integer('accepted_by_buyer');
             $table->integer('deleted');
             $table->timestamps();
         });

@@ -15,7 +15,26 @@ class CategoryController extends Controller
 {
     //
     public function showAllGoodTypes(){
-        return view('chooseGoodType');
+        $auctions = DB::table('auctions')
+            ->where([
+                ['deleted', '=', 0]
+            ])
+            ->select('*')
+            ->get();
+        $uniq_auctions = array();
+        foreach ($auctions as $auc)
+        {
+            $uniq_auctions[$auc->car_id+"_"+$auc->category_id+" "+$auc->district_id] = array(
+                'car_id'=> $auc->car_id,
+                'category_id'=>$auc->category_id,
+                'district_id'=>$auc->district_id,
+                'car_name'=>$auc->car_name,
+                'category_name'=>$auc->category_name,
+                'district_name'=>$auc->district_name,
+                );
+        }
+
+        return view('chooseGoodType', compact('uniq_auctions'));
     }
 
     public function showAllCategories(Car $car){

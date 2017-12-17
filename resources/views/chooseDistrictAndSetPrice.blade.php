@@ -7,6 +7,16 @@
     <link rel="stylesheet" href="../../../public/css/chooseDistrictAndSetPricePage.css" type="text/css">
 </head>
 <body>
+@if (Route::has('login'))
+    <div class="top-right">
+        @if (Auth::check())
+            <a href="{{ url('/home') }}"><span class="links">Профиль</span></a>
+        @else
+            <a href="{{ url('/login') }}"><span class="links">Войти</span></a>
+            <a href="{{ url('/register') }}"><span class="links">Зарегистрироваться</span></a>
+        @endif
+    </div>
+@endif
 <div class="py-3 my-0">
     <div class="container">
         <div class="row">
@@ -16,7 +26,7 @@
         </div>
     </div>
 </div>
-<form method="POST" action="../../goToSelectedAuction/car{{$car->id}}/category{{$category->id}}">
+<form method="POST" action="../../goToSelectedAuction/car{{$car->id}}/category{{$category->id}}" class="form">
 <div class="py-0">
     <div class="container">
         <div class="row">
@@ -27,8 +37,18 @@
                 <p class="lead text-warning">Товар: <span class="text-white">{{$category->name}}</span></p>
             </div>
             <div class="col-md-6">
-                <p class="lead text-warning">Введите цену: <input type="number" name="price" class="price"> </p>
+                <p class="lead text-warning">Введите цену: <input type="number" name="price" id="price"> </p>
             </div>
+            @if (Auth::check())
+                @if (Auth::user()->role == "buyer")
+                    <div class="col-md-6">
+                        <p class="lead text-warning">Вы можете выбрать Вашу локацию на карте:
+                            <img class="location" src="../../../resources/images/location32.png">
+                            <input type="hidden" name="location" class="longlat">
+                        </p>
+                    </div>
+                @endif
+            @endif
         </div>
     </div>
 </div>
@@ -37,7 +57,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <button type="submit" name="district" value="{{$district->id}}_{{$district->name}}" class="btn btn-secondary text-primary w-100 text-center">
+                <button type="submit" name="district" value="{{$district->id}}_{{$district->name}}"
+                                class="btn btn-secondary text-primary w-100 text-center districts">
                     {{$district->name}}
                 </button>
             </div>
@@ -47,5 +68,12 @@
 @endforeach
 {{ csrf_field() }}
 </form>
+<script type="text/javascript" src="{!! asset('js/jquery-3.2.1.min.js') !!}"></script>
+<script type="text/javascript" src="{!! asset('js/checkPrice.js') !!}"></script>
+<script type="text/javascript" src="{!! asset('js/showMapForLocationSetting.js') !!}"></script>
+<script type="text/javascript" src="{!! asset('js/checkPrice.js') !!}"></script>
+<script>
+    var userRole = '{{Auth::user()->role}}';
+</script>
 </body>
 </html>

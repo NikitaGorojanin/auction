@@ -12,10 +12,10 @@
 @if (Route::has('login'))
     <div class="top-right">
         @if (Auth::check())
-            <a href="{{ url('/home') }}"><span class="links">Home</span></a>
+            <a href="{{ url('/home') }}"><span class="links">Профиль</span></a>
         @else
-            <a href="{{ url('/login') }}"><span class="links">Login</span></a>
-            <a href="{{ url('/register') }}"><span class="links">Register</span></a>
+            <a href="{{ url('/login') }}"><span class="links">Войти</span></a>
+            <a href="{{ url('/register') }}"><span class="links">Зарегистрироваться</span></a>
         @endif
     </div>
 @endif
@@ -41,8 +41,24 @@
         <div class="row">
             <div class="col-md-12">
                 <a href="buildingMaterials" class="btn btn-outline-primary w-100 text-center btn-sm good-type-btn text-white text-uppercase">
-                    Строительные материалы
+                    Новый аукцион
                 </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="py-3 my-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                @foreach($uniq_auctions as $auction)
+                    <div class="order link">
+                        <a href="showAuction/car{{$auction['car_id']}}/category{{$auction['category_id']}}/district{{$auction['district_id']}}"
+                           class="btn btn-outline-primary w-100 text-center btn-sm good-type-btn text-white text-uppercase">
+                            Товар: {{$auction['category_name']}}<br>Машина: {{$auction['car_name']}}<br>Район: {{$auction['district_name']}}
+                        </a>
+                    </div>
+                @endforeach
             </div>
         </div>
     </div>

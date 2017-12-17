@@ -7,6 +7,16 @@
     <link rel="stylesheet" href="../public/css/chooseCategoryGoodPage.css" type="text/css"> </head>
 
 <body>
+@if (Route::has('login'))
+    <div class="top-right">
+        @if (Auth::check())
+            <a href="{{ url('/home') }}"><span class="links">Профиль</span></a>
+        @else
+            <a href="{{ url('/login') }}"><span class="links">Войти</span></a>
+            <a href="{{ url('/register') }}"><span class="links">Зарегистрироваться</span></a>
+        @endif
+    </div>
+@endif
 <div class="py-3 my-0">
     <div class="container">
         <div class="row">

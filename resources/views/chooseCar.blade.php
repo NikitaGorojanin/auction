@@ -6,7 +6,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="../public/css/chooseCarPage.css" type="text/css"> </head>
 
-<body class="text-right">
+<body>
+@if (Route::has('login'))
+    <div class="top-right">
+        @if (Auth::check())
+            <a href="{{ url('/home') }}"><span class="links">Профиль</span></a>
+        @else
+            <a href="{{ url('/login') }}"><span class="links">Войти</span></a>
+            <a href="{{ url('/register') }}"><span class="links">Зарегистрироваться</span></a>
+        @endif
+    </div>
+@endif
 <div class="py-3 my-0">
     <div class="container">
         <div class="row">
